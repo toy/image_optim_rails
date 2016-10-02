@@ -40,6 +40,10 @@ Check available options in [options section of image_optim](https://github.com/t
 
 Image optimization can be time consuming, so depending on your deployment process you may prefer to optimize original asset files.
 
+## ChangeLog
+
+In separate file [CHANGELOG.markdown](CHANGELOG.markdown).
+
 ## Copyright
 
 Copyright (c) 2013-2016 Ivan Kuchin. See [LICENSE.txt](LICENSE.txt) for details.
