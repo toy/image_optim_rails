@@ -18,6 +18,7 @@ class ImageOptim
             hash[key] = ActiveSupport::OrderedOptions.new
           end
         end
+      app.config.assets.image_optim.merge!(default_options)
     end
 
     initializer 'image_optim.initializer' do |app|
@@ -41,10 +42,20 @@ class ImageOptim
 
     def options(app)
       if app.config.assets.image_optim == true
-        {}
+        default_options
       else
-        app.config.assets.image_optim || {}
+        app.config.assets.image_optim || default_options
       end
+    end
+
+    def default_options
+      {
+        :config_paths => [
+          'config/image_optim.yml',
+          "config/image_optim/#{Rails.env}.yml",
+        ],
+        :cache_dir => 'tmp/cache/image_optim',
+      }
     end
 
     def optimize_image_data(data)

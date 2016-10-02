@@ -63,20 +63,35 @@ describe 'ImageOptim::Railtie' do
     end
 
     describe 'options' do
-      it 'initializes with empty hash by default' do
-        expect(ImageOptim).to receive(:new).with({})
+      let(:default_options) do
+        {
+          :config_paths => [
+            'config/image_optim.yml',
+            'config/image_optim/xxx.yml',
+          ],
+          :cache_dir => 'tmp/cache/image_optim',
+        }
+      end
+
+      before do
+        allow(Rails).to receive(:env).
+          and_return(ActiveSupport::StringInquirer.new('xxx'))
+      end
+
+      it 'initializes with defaults' do
+        expect(ImageOptim).to receive(:new).with(default_options)
         init_rails_app
       end
 
-      it 'initializes with empty hash if config.assets.image_optim is true' do
-        expect(ImageOptim).to receive(:new).with({})
+      it 'initializes with defaults if config.assets.image_optim is true' do
+        expect(ImageOptim).to receive(:new).with(default_options)
         init_rails_app do |config|
           config.assets.image_optim = true
         end
       end
 
-      it 'initializes with empty hash if config.assets.image_optim is nil' do
-        expect(ImageOptim).to receive(:new).with({})
+      it 'initializes with defaults if config.assets.image_optim is nil' do
+        expect(ImageOptim).to receive(:new).with(default_options)
         init_rails_app do |config|
           config.assets.image_optim = nil
         end
@@ -92,7 +107,7 @@ describe 'ImageOptim::Railtie' do
 
       it 'is possible to set individual options' do
         hash = {:config_paths => 'config/image_optim.yml'}
-        expect(ImageOptim).to receive(:new).with(hash)
+        expect(ImageOptim).to receive(:new).with(default_options.merge(hash))
         init_rails_app do |config|
           config.assets.image_optim.config_paths = 'config/image_optim.yml'
         end
@@ -100,7 +115,7 @@ describe 'ImageOptim::Railtie' do
 
       it 'is possible to set individual worker options' do
         hash = {:advpng => {:level => 3}}
-        expect(ImageOptim).to receive(:new).with(hash)
+        expect(ImageOptim).to receive(:new).with(default_options.merge(hash))
         init_rails_app do |config|
           expect(config.assets.image_optim.advpng).to eq({})
           config.assets.image_optim.advpng.level = 3
@@ -108,7 +123,7 @@ describe 'ImageOptim::Railtie' do
       end
 
       it 'is not possible to set unknown worker options' do
-        expect(ImageOptim).to receive(:new).with({})
+        expect(ImageOptim).to receive(:new).with(default_options)
         init_rails_app do |config|
           expect(config.assets.image_optim.unknown).to eq(nil)
           expect do

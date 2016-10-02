@@ -37,9 +37,11 @@ config.assets.image_optim.svgo = false
 config.assets.image_optim.gifsicle.careful = true
 ```
 
-Check available options in [options section of image_optim](https://github.com/toy/image_optim#options).
+Or through config files `config/image_optim.yml` and `config/image_optim/#{RAILS_ENV}.yml`.
 
-Image optimization can be time consuming, so depending on your deployment process you may prefer to optimize original asset files.
+Caching is enabled by default in directory `tmp/cache/image_optim`.
+
+Check all available options in [options section of image_optim](https://github.com/toy/image_optim#options).
 
 ## ChangeLog
 
