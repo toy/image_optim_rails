@@ -15,13 +15,13 @@ Options and instructions for getting binaries can be found in [image_optim readm
 Add to your `Gemfile`:
 
 ```ruby
-gem 'image_optim'
+gem 'image_optim_rails'
 ```
 
 With [`image_optim_pack`](https://github.com/toy/image_optim_pack):
 
 ```ruby
-gem 'image_optim'
+gem 'image_optim_rails'
 gem 'image_optim_pack'
 ```
 
@@ -34,6 +34,7 @@ You can provide options for image_optim used for preprocessor through config:
 ```ruby
 config.assets.image_optim.nice = 20
 config.assets.image_optim.svgo = false
+config.assets.image_optim.gifsicle.careful = true
 ```
 
 Check available options in [options section of image_optim](https://github.com/toy/image_optim#options).
