@@ -3,31 +3,16 @@ language: ruby
 cache:
   bundler: true
   directories:
-  - $(npm root)
-  - ~/bin
-script: |
-  (
-    set -ex
-    if [ -n "$RUBOCOP" ]; then
-      bundle exec rubocop
-    else
-      bundle exec image_optim --info
-      bundle exec rspec
-    fi
-  )
-before_install: |
-  (
-    set -ex
-    if [ -z "$RUBOCOP" ]; then
-      command -v svgo || npm install svgo
-      command -v pngout || {
-        mkdir -p ~/bin
-        curl -L "http://static.jonof.id.au/dl/kenutils/pngout-20130221-linux.tar.gz" | tar -xz -C ~/bin --strip-components 2 --wildcards '*/x86_64/pngout'
-      }
-    fi
-  )
+    - $(npm root)
+    - ~/bin
+script:
+  - bundle exec image_optim --info
+  - bundle exec rspec
+before_install:
+  - mkdir -p ~/bin
+  - command -v svgo || npm install svgo
+  - command -v pngout || curl -L "http://static.jonof.id.au/dl/kenutils/pngout-20130221-linux.tar.gz" | tar -xz -C ~/bin --strip-components 2 --wildcards '*/x86_64/pngout'
 matrix:
-  fast_finish: true
   include:
     - env: RAILS_VERSION='~> 3.2'
       rvm: default
@@ -39,5 +24,7 @@ matrix:
       rvm: '2.2.2'
     - env: RAILS_VERSION='~> 5.0'
       rvm: '2.2.2'
-    - env: RUBOCOP=true
+    - env: RUBOCOP=✓
       rvm: '2.2.2'
+      script: bundle exec rubocop
+      before_install:
