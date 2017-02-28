@@ -4,10 +4,14 @@ AllCops:
     - 'vendor/**/*'
 
 Lint/EndAlignment:
-  AlignWith: variable
+  EnforcedStyleAlignWith: variable
 
 Metrics/AbcSize:
   Max: 30
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
 
 Metrics/MethodLength:
   Max: 25
@@ -19,7 +23,7 @@ Style/Alias:
   EnforcedStyle: prefer_alias_method
 
 Style/CaseIndentation:
-  IndentWhenRelativeTo: end
+  EnforcedStyle: end
 
 Style/DotPosition:
   EnforcedStyle: trailing
