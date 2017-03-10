@@ -68,7 +68,11 @@ class ImageOptim
           app.assets.register_preprocessor mime_type, :image_optim, &processor
         else
           app.config.assets.configure do |env|
-            env.register_preprocessor mime_type, :image_optim, &processor
+            if Sprockets::Processing.instance_method(:register_config_processor).arity == -3
+              env.register_preprocessor mime_type, &processor
+            else
+              env.register_preprocessor mime_type, :image_optim, &processor
+            end
           end
         end
       end
