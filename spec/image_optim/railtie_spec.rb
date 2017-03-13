@@ -31,6 +31,10 @@ describe 'ImageOptim::Railtie' do
     end.initialize!
   end
 
+  before do
+    allow(Rails).to receive(:root).and_return(Pathname('spec/dummy').expand_path)
+  end
+
   after do
     Rails.application = nil
   end
@@ -149,7 +153,7 @@ describe 'ImageOptim::Railtie' do
         asset = init_rails_app.assets.find_asset(asset_name)
 
         asset_data = asset.source
-        original = Path.convert(asset.pathname)
+        original = Path.convert(asset.respond_to?(:filename) ? asset.filename : asset.pathname)
 
         expect(asset_data).to be_smaller_than(original)
 
