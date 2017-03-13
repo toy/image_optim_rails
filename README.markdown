@@ -49,4 +49,4 @@ In separate file [CHANGELOG.markdown](CHANGELOG.markdown).
 
 ## Copyright
 
-Copyright (c) 2013-2016 Ivan Kuchin. See [LICENSE.txt](LICENSE.txt) for details.
+Copyright (c) 2013-2017 Ivan Kuchin. See [LICENSE.txt](LICENSE.txt) for details.

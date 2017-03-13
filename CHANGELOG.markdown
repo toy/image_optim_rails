@@ -2,6 +2,8 @@
 
 ## unreleased
 
+## v0.3.0 (2017-03-13)
+
 * Add sprockets 4 support [toy/image_optim_rails#2](https://github.com/toy/image_optim_rails/issues/2) [@toy](https://github.com/toy)
 
 ## v0.2.0 (2016-10-03)
