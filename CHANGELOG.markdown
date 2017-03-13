@@ -2,6 +2,8 @@
 
 ## unreleased
 
+* Add sprockets 4 support [toy/image_optim_rails#2](https://github.com/toy/image_optim_rails/issues/2) [@toy](https://github.com/toy)
+
 ## v0.2.0 (2016-10-03)
 
 * Use railsy config paths `config/image_optim.yml` and `config/image_optim/#{RAILS_ENV}.yml` and cache to `tmp/cache/image_optim` by default [@toy](https://github.com/toy)
