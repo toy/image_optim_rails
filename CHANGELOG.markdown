@@ -2,6 +2,8 @@
 
 ## unreleased
 
+* Use absolute path to Rails root for default options [#3](https://github.com/toy/image_optim_rails/pull/3) [@wjordan](https://github.com/wjordan)
+
 ## v0.3.0 (2017-03-13)
 
 * Add sprockets 4 support [toy/image_optim_rails#2](https://github.com/toy/image_optim_rails/issues/2) [@toy](https://github.com/toy)
