@@ -2,6 +2,8 @@
 
 ## unreleased
 
+## v0.4.0 (2017-05-31)
+
 * Use absolute path to Rails root for default options [#3](https://github.com/toy/image_optim_rails/pull/3) [@wjordan](https://github.com/wjordan)
 
 ## v0.3.0 (2017-03-13)
