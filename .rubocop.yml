@@ -3,6 +3,30 @@ AllCops:
     - '*.gemspec'
     - 'vendor/**/*'
 
+Layout/AccessModifierIndentation:
+  EnforcedStyle: outdent
+
+Layout/CaseIndentation:
+  EnforcedStyle: end
+
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
+Layout/IndentArray:
+  EnforcedStyle: consistent
+
+Layout/IndentAssignment:
+  Enabled: false
+
+Layout/IndentHash:
+  EnforcedStyle: consistent
+
+Layout/SpaceBeforeBlockBraces:
+  EnforcedStyle: no_space
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+
 Lint/EndAlignment:
   EnforcedStyleAlignWith: variable
 
@@ -19,17 +43,8 @@ Metrics/LineLength:
 Metrics/MethodLength:
   Max: 25
 
-Style/AccessModifierIndentation:
-  EnforcedStyle: outdent
-
 Style/Alias:
   EnforcedStyle: prefer_alias_method
-
-Style/CaseIndentation:
-  EnforcedStyle: end
-
-Style/DotPosition:
-  EnforcedStyle: trailing
 
 Style/DoubleNegation:
   Enabled: false
@@ -46,34 +61,14 @@ Style/HashSyntax:
 Style/IfUnlessModifier:
   MaxLineLength: 40
 
-Style/IndentArray:
-  EnforcedStyle: consistent
-
-Style/IndentAssignment:
-  Enabled: false
-
-Style/IndentHash:
-  EnforcedStyle: consistent
-
 Style/ParallelAssignment:
   Enabled: false
-
-Style/PercentLiteralDelimiters:
-  PreferredDelimiters:
-    '%w': '[]'
-    '%W': '[]'
 
 Style/Semicolon:
   AllowAsExpressionSeparator: true
 
 Style/SignalException:
   EnforcedStyle: semantic
-
-Style/SpaceBeforeBlockBraces:
-  EnforcedStyle: no_space
-
-Style/SpaceInsideHashLiteralBraces:
-  EnforcedStyle: no_space
 
 Style/TrailingCommaInArguments:
   EnforcedStyleForMultiline: no_comma
