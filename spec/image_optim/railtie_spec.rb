@@ -68,12 +68,13 @@ describe 'ImageOptim::Railtie' do
 
     describe 'options' do
       let(:default_options) do
+        root = File.expand_path('../../..', __FILE__)
         {
           :config_paths => [
-            'config/image_optim.yml',
-            'config/image_optim/xxx.yml',
+            "#{root}/config/image_optim.yml",
+            "#{root}/config/image_optim/xxx.yml",
           ],
-          :cache_dir => 'tmp/cache/image_optim',
+          :cache_dir => "#{root}/tmp/cache/image_optim",
         }
       end
 
