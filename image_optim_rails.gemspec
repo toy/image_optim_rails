@@ -22,6 +22,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'image_optim_pack', '~> 0.2', '>= 0.2.2'
   s.add_development_dependency 'rspec', '~> 3.0'
   if RUBY_VERSION >= '2.0'
-    s.add_development_dependency 'rubocop', '~> 0.47'
+    s.add_development_dependency 'rubocop', '~> 0.49'
   end
 end
