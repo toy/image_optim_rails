@@ -1,4 +1,5 @@
 require 'image_optim'
+require 'set'
 
 class ImageOptim
   # Adds image_optim as preprocessor for gif, jpeg, png and svg images
@@ -27,6 +28,10 @@ class ImageOptim
 
       @image_optim = ImageOptim.new(options(app))
 
+      register_dependency_resolver(app, 'image-optim-config') do
+        options(app).to_h
+      end
+
       register_preprocessor(app) do |*args|
         if args[1] # context and data arguments in sprockets 2
           optimize_image_data(args[1])
@@ -35,6 +40,7 @@ class ImageOptim
           {
             :data => optimize_image_data(input[:data]),
             :charset => nil, # no gzipped version with rails/sprockets#228
+            :dependencies => Set.new.add('image-optim-config'),
           }
         end
       end
@@ -76,6 +82,18 @@ class ImageOptim
               env.register_preprocessor mime_type, :image_optim, &processor
             end
           end
+        end
+      end
+    end
+
+    def register_dependency_resolver(app, scheme, &resolver)
+      return unless Sprockets::Environment.method_defined?(:register_dependency_resolver)
+
+      if app.assets
+        app.assets.register_dependency_resolver scheme, &resolver
+      else
+        app.config.assets.configure do |env|
+          env.register_dependency_resolver scheme, &resolver
         end
       end
     end
