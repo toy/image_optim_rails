@@ -25,16 +25,16 @@ matrix:
     - env: RAILS_VERSION='~> 4.0' SPROCKETS_VERSION='>= 4.0.beta'
       rvm: '2.0.0-p648'
     - env: RAILS_VERSION='~> 5.0' SPROCKETS_RAILS_VERSION='~> 2.0'
-      rvm: '2.2.7'
+      rvm: '2.2.8'
     - env: RAILS_VERSION='~> 5.0' SPROCKETS_VERSION='~> 3.0'
-      rvm: '2.2.7'
+      rvm: '2.2.8'
     - env: RAILS_VERSION='~> 5.0' SPROCKETS_VERSION='>= 4.0.beta'
-      rvm: '2.2.7'
+      rvm: '2.2.8'
     - env: RUBOCOP=✓
-      rvm: '2.4.1'
+      rvm: '2.4.2'
       script: bundle exec rubocop
       before_install:
     - env: CHECK_RUBIES=✓
-      rvm: '2.4.1'
+      rvm: '2.4.2'
       script: bundle exec travis_check_rubies
       before_install:
