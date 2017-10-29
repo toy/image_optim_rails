@@ -52,9 +52,6 @@ Style/DoubleNegation:
 Style/EmptyCaseCondition:
   Enabled: false
 
-Style/Encoding:
-  EnforcedStyle: when_needed
-
 Style/HashSyntax:
   EnforcedStyle: hash_rockets
 
