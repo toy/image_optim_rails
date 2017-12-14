@@ -56,7 +56,7 @@ Style/HashSyntax:
   EnforcedStyle: hash_rockets
 
 Style/IfUnlessModifier:
-  MaxLineLength: 40
+  Enabled: false
 
 Style/ParallelAssignment:
   Enabled: false

@@ -3,7 +3,7 @@ require 'rails/all'
 require 'image_optim/railtie'
 
 describe 'ImageOptim::Railtie' do
-  def init_rails_app
+  def rails_app
     Class.new(Rails::Application) do
       # Rails 4 requires application class to have name
       define_singleton_method :name do
@@ -28,7 +28,11 @@ describe 'ImageOptim::Railtie' do
       end
 
       yield config if block_given?
-    end.initialize!
+    end
+  end
+
+  def init_rails_app(&block)
+    rails_app(&block).initialize!
   end
 
   before do
