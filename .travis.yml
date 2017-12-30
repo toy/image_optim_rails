@@ -5,8 +5,17 @@ cache:
   directories:
     - $(npm root)
     - ~/bin
+rvm:
+  - '1.9.3-p551'
+  - '2.0.0-p648'
+  - '2.1.10'
+  - '2.2.9'
+  - '2.3.6'
+  - '2.4.3'
+  - '2.5.0'
 script:
   - bundle exec image_optim --info
+  - bundle exec appraisal rspec
   - bundle exec rspec
 before_install:
   - gem update --system
@@ -14,22 +23,11 @@ before_install:
   - mkdir -p ~/bin
   - command -v svgo || npm install -g svgo
   - command -v pngout || curl -L "http://static.jonof.id.au/dl/kenutils/pngout-20130221-linux.tar.gz" | tar -xz -C ~/bin --strip-components 2 --wildcards '*/x86_64/pngout'
+install:
+  - bundle install --jobs=3 --retry=3
+  - bundle exec appraisal install --jobs=3 --retry=3
 matrix:
   include:
-    - env: RAILS_VERSION='~> 3.2'
-      rvm: '1.9.3-p551'
-    - env: RAILS_VERSION='~> 4.0' SPROCKETS_RAILS_VERSION='~> 2.0'
-      rvm: '2.0.0-p648'
-    - env: RAILS_VERSION='~> 4.0' SPROCKETS_VERSION='~> 3.0'
-      rvm: '2.0.0-p648'
-    - env: RAILS_VERSION='~> 4.0' SPROCKETS_VERSION='>= 4.0.beta'
-      rvm: '2.0.0-p648'
-    - env: RAILS_VERSION='~> 5.0' SPROCKETS_RAILS_VERSION='~> 2.0'
-      rvm: '2.2.9'
-    - env: RAILS_VERSION='~> 5.0' SPROCKETS_VERSION='~> 3.0'
-      rvm: '2.2.9'
-    - env: RAILS_VERSION='~> 5.0' SPROCKETS_VERSION='>= 4.0.beta'
-      rvm: '2.2.9'
     - env: RUBOCOP=✓
       rvm: '2.4.3'
       script: bundle exec rubocop

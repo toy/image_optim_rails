@@ -12,3 +12,4 @@ Makefile
 /tmp/
 
 /Gemfile.lock
+/gemfiles/
