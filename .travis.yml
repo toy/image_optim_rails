@@ -22,7 +22,7 @@ before_install:
   - gem update bundler
   - mkdir -p ~/bin
   - command -v svgo || npm install -g svgo
-  - command -v pngout || curl -L "http://static.jonof.id.au/dl/kenutils/pngout-20130221-linux.tar.gz" | tar -xz -C ~/bin --strip-components 2 --wildcards '*/x86_64/pngout'
+  - command -v pngout || curl -L "http://static.jonof.id.au/dl/kenutils/pngout-20150319-linux.tar.gz" | tar -xz -C ~/bin --strip-components 2 --wildcards '*/x86_64/pngout'
 install:
   - bundle install --jobs=3 --retry=3
   - bundle exec appraisal install --jobs=3 --retry=3
