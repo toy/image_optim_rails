@@ -14,7 +14,6 @@ end
 if RUBY_VERSION >= '2.1'
   appgen 'rails' => '~> 4.0', 'sprockets-rails' => '~> 2.0'
   appgen 'rails' => '~> 4.0', 'sprockets' => '~> 3.0'
-  appgen 'rails' => '~> 4.0', 'sprockets' => '>= 4.0.beta'
 end
 
 if RUBY_VERSION >= '2.2'
