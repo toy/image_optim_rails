@@ -27,6 +27,8 @@ describe 'ImageOptim::Railtie' do
         assets.delete(:compress)
       end
 
+      config.secret_key_base = 'foo/bar'
+
       yield config if block_given?
     end
   end
