@@ -5,6 +5,7 @@ gemspec
 gem 'appraisal'
 
 gem 'nokogiri', '< 1.7' if RUBY_VERSION < '2.1'
+gem 'rack-cache', '< 1.7.2' if RUBY_VERSION < '2.0'
 gem 'rake', '< 12.3' if RUBY_VERSION < '2.0'
 
 if RUBY_VERSION >= '2.0'
