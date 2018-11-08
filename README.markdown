@@ -1,7 +1,7 @@
 [![Gem Version](https://img.shields.io/gem/v/image_optim_rails.svg?style=flat)](https://rubygems.org/gems/image_optim_rails)
 [![Build Status](https://img.shields.io/travis/toy/image_optim_rails/master.svg?style=flat)](https://travis-ci.org/toy/image_optim_rails)
 [![Code Climate](https://img.shields.io/codeclimate/maintainability/toy/image_optim_rails.svg?style=flat)](https://codeclimate.com/github/toy/image_optim_rails)
-[![Dependency Status](https://img.shields.io/gemnasium/toy/image_optim_rails.svg?style=flat)](https://gemnasium.com/toy/image_optim_rails)
+[![Depfu](https://badges.depfu.com/badges/713ede61b82ee98a3e86a374b5278d28/overview.svg)](https://depfu.com/github/toy/image_optim_rails)
 [![Inch CI](https://inch-ci.org/github/toy/image_optim_rails.svg?branch=master&style=flat)](https://inch-ci.org/github/toy/image_optim_rails)
 
 # image\_optim\_rails
