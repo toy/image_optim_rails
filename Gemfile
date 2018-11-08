@@ -8,7 +8,7 @@ gem 'nokogiri', '< 1.7' if RUBY_VERSION < '2.1'
 if RUBY_VERSION < '2.0'
   gem 'concurrent-ruby', '!= 1.1.1'
   gem 'rack-cache', '< 1.7.2'
-  gem 'rake', '< 12.3'
+  gem 'rake', '<= 12.3.1'
 end
 
 if RUBY_VERSION >= '2.0'
