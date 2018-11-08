@@ -4,6 +4,16 @@ def appgen(gems)
     gems.each do |name, version|
       gem name, version
     end
+
+    if RUBY_VERSION < '2.0'
+      gem 'concurrent-ruby', '!= 1.1.1'
+      gem 'rack-cache', '< 1.7.2'
+      gem 'rake', '< 12.3'
+    end
+
+    if RUBY_VERSION < '2.1'
+      gem 'nokogiri', '< 1.7'
+    end
   end
 end
 
