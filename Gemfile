@@ -4,7 +4,7 @@ gemspec
 
 gem 'appraisal'
 
-gem 'nokogiri', '< 1.7' if RUBY_VERSION < '2.1'
+gem 'nokogiri', '<= 1.8.5' if RUBY_VERSION < '2.1'
 if RUBY_VERSION < '2.0'
   gem 'concurrent-ruby', '!= 1.1.1'
   gem 'rack-cache', '< 1.7.2'
