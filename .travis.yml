@@ -16,7 +16,6 @@ rvm:
 script:
   - bundle exec image_optim --info
   - bundle exec appraisal rspec
-  - bundle exec rspec
 before_install:
   - gem update --system
   - gem update bundler
