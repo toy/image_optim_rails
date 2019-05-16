@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'image_optim/pack'
 require 'image_optim/path'
 
