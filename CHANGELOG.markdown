@@ -2,6 +2,8 @@
 
 ## unreleased
 
+* Enable frozen string literals [@toy](https://github.com/toy)
+
 ## v0.4.1 (2017-07-09)
 
 * Relax `image_optim` dependency [#5](https://github.com/toy/image_optim_rails/issues/5) [@toy](https://github.com/toy)
