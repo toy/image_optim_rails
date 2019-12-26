@@ -19,17 +19,23 @@ def appgen(gems)
   end
 end
 
-if RUBY_VERSION < '2.3'
+if RUBY_VERSION < '2.4'
   appgen 'rails' => '~> 3.2'
 end
 
-if RUBY_VERSION >= '2.1'
+if RUBY_VERSION >= '1.9' && RUBY_VERSION < '2.5'
   appgen 'rails' => '~> 4.0', 'sprockets-rails' => '~> 2.0'
   appgen 'rails' => '~> 4.0', 'sprockets' => '~> 3.0'
 end
 
-if RUBY_VERSION >= '2.3'
+if RUBY_VERSION >= '2.3' && RUBY_VERSION < '2.7'
   appgen 'rails' => '~> 5.0', 'sprockets-rails' => '~> 2.0'
   appgen 'rails' => '~> 5.0', 'sprockets' => '~> 3.0'
-  appgen 'rails' => '~> 5.0', 'sprockets' => '>= 4.0.beta'
+  appgen 'rails' => '~> 5.0', 'sprockets' => '>= 4.0' if RUBY_VERSION >= '2.5'
+end
+
+if RUBY_VERSION >= '2.5'
+  appgen 'rails' => '~> 6.0', 'sprockets-rails' => '~> 2.0'
+  appgen 'rails' => '~> 6.0', 'sprockets' => '~> 3.0'
+  appgen 'rails' => '~> 6.0', 'sprockets' => '>= 4.0'
 end
