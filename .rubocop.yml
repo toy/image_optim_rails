@@ -25,6 +25,9 @@ Layout/FirstArrayElementIndentation:
 Layout/FirstHashElementIndentation:
   EnforcedStyle: consistent
 
+Layout/LineLength:
+  Max: 120
+
 Layout/SpaceBeforeBlockBraces:
   EnforcedStyle: no_space
 
@@ -37,9 +40,6 @@ Metrics/AbcSize:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*.rb'
-
-Metrics/LineLength:
-  Max: 120
 
 Metrics/MethodLength:
   Max: 25
@@ -56,8 +56,17 @@ Style/EmptyCaseCondition:
 Style/ExpandPathArguments:
   Enabled: false
 
+Style/HashEachMethods:
+  Enabled: true
+
 Style/HashSyntax:
   EnforcedStyle: hash_rockets
+
+Style/HashTransformKeys:
+  Enabled: false
+
+Style/HashTransformValues:
+  Enabled: false
 
 Style/IfUnlessModifier:
   Enabled: false
