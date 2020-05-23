@@ -21,7 +21,7 @@ script:
   - ./bundle exec appraisal rspec
 before_install:
   - gem install rubygems-update || gem install rubygems-update --version '< 3'
-  - gem update --system
+  - update_rubygems
   - gem install bundler --version '< 2'
   - ruby -e 'puts "#!/bin/sh", %{bundle _#{Gem::Dependency.new("bundler", "< 2.0").to_spec.version}_ "$@"}' > bundle
   - chmod +x bundle
