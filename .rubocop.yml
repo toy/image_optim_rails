@@ -3,6 +3,7 @@ AllCops:
     - '*.gemspec'
     - 'vendor/**/*'
     - 'gemfiles/*.gemfile'
+  NewCops: enable
 
 Layout/AccessModifierIndentation:
   EnforcedStyle: outdent
