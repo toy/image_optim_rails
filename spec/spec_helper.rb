@@ -67,6 +67,6 @@ RSpec::Matchers.define :be_similar_to do |expected, max_difference|
   end
   failure_message do |actual|
     "expected #{actual} to have at most #{max_difference} difference from "\
-        "#{expected}, got normalized root-mean-square error of #{@diff}"
+      "#{expected}, got normalized root-mean-square error of #{@diff}"
   end
 end
