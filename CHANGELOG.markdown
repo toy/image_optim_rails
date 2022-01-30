@@ -2,6 +2,8 @@
 
 ## unreleased
 
+* Depend only on `railties` instead of complete `rails` [#13](https://github.com/toy/image_optim_rails/issues/13) [@toy](https://github.com/toy)
+
 ## v0.4.3 (2019-07-14)
 
 * Remove deprecated `rubyforge_project` attribute from gemspec [rubygems/rubygems#2436](https://github.com/rubygems/rubygems/pull/2436) [@toy](https://github.com/toy)

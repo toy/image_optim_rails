@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.require_paths = %w[lib]
 
   s.add_dependency 'image_optim', '~> 0.24'
-  s.add_dependency 'rails'
+  s.add_dependency 'railties'
   s.add_dependency 'sprockets'
 
   s.add_development_dependency 'image_optim_pack', '~> 0.2', '>= 0.2.2'
