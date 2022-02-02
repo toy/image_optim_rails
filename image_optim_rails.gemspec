@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = 'image_optim_rails'
-  s.version     = '0.4.3'
+  s.version     = '0.5.0'
   s.summary     = %q{Optimize image assets using image_optim}
   s.homepage    = "https://github.com/toy/#{s.name}"
   s.authors     = ['Ivan Kuchin']

@@ -2,6 +2,8 @@
 
 ## unreleased
 
+## v0.5.0 (2022-02-02)
+
 * Depend only on `railties` instead of complete `rails` [#13](https://github.com/toy/image_optim_rails/issues/13) [@toy](https://github.com/toy)
 
 ## v0.4.3 (2019-07-14)
