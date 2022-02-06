@@ -2,7 +2,7 @@
 
 def appgen(gems)
   description = gems.map{ |name, version| "#{name} #{version}" }.join(', ')
-  appraise description do
+  appraise "ruby-#{RUBY_VERSION[/\d+\.\d+/]} #{description}" do
     gems.each do |name, version|
       gem name, version
     end
