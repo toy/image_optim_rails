@@ -5,7 +5,7 @@ require 'image_optim/path'
 
 ENV['PATH'] = [
   ImageOptim::Pack.path,
-  ENV['PATH'],
+  ENV.fetch('PATH', nil),
 ].compact.join File::PATH_SEPARATOR
 
 RSpec.configure do |c|
