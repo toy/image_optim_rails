@@ -29,7 +29,6 @@ jobs:
         bundler-cache: true
         bundler: 1
     - run: sudo npm install -g svgo
-    - run: curl -L "https://www.jonof.id.au/files/kenutils/pngout-20200115-linux.tar.gz" | sudo tar -xz -C /usr/local/bin --strip-components 2 --wildcards '*/amd64/pngout'
     - run: RUBYOPT=-rset bundle exec appraisal install --jobs=3 --retry=3
     - run: bundle exec image_optim --info
     - run: bundle exec appraisal rspec
