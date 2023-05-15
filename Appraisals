@@ -17,6 +17,10 @@ def appgen(gems)
       gem 'nokogiri', '< 1.7'
     end
 
+    if RUBY_VERSION < '2.5'
+      gem 'loofah', '< 2.21.0'
+    end
+
     gem 'tzinfo'
 
     gem 'sprockets-rails' if gems['railties'] != '~> 3.2' && !gems['sprockets-rails']
