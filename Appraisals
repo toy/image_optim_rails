@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-def appgen(gems)
+def appgen(gems) # rubocop:disable Metrics/CyclomaticComplexity
   description = gems.map{ |name, version| "#{name} #{version}" }.join(', ')
   appraise "ruby-#{RUBY_VERSION[/\d+\.\d+/]} #{description}" do
     gems.each do |name, version|
