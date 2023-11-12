@@ -25,7 +25,6 @@ jobs:
       with:
         ruby-version: "${{ matrix.ruby }}"
         bundler-cache: true
-        bundler: 1
     - run: sudo npm install -g svgo
     - run: RUBYOPT=-rset bundle exec appraisal install --jobs=3 --retry=3
     - run: bundle exec image_optim --info
