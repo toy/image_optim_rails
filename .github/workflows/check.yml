@@ -22,6 +22,7 @@ jobs:
       fail-fast: false
     steps:
     - uses: actions/checkout@v4
+    - run: sudo apt-get update && sudo apt-get -y install imagemagick
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: "${{ matrix.ruby }}"
