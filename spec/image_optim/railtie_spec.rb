@@ -15,7 +15,7 @@ describe 'ImageOptim::Railtie' do
       config.active_support.deprecation = :stderr
       config.eager_load = false
 
-      config.logger = Logger.new('/dev/null')
+      config.logger = Logger.new(File::NULL)
 
       config.assets.tap do |assets|
         assets.enabled = true
