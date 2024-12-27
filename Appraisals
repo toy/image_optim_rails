@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-def appgen(gems) # rubocop:disable Metrics/CyclomaticComplexity
+def appgen(gems) # rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
   description = gems.map{ |name, version| "#{name} #{version}" }.join(', ')
   appraise "ruby-#{RUBY_VERSION[/\d+\.\d+/]} #{description}" do
     gems.each do |name, version|
@@ -19,6 +19,12 @@ def appgen(gems) # rubocop:disable Metrics/CyclomaticComplexity
 
     if RUBY_VERSION < '2.5'
       gem 'loofah', '< 2.21.0'
+    end
+
+    if RUBY_VERSION >= '3.4'
+      gem 'base64'
+      gem 'bigdecimal'
+      gem 'mutex_m'
     end
 
     gem 'tzinfo'
