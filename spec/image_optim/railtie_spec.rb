@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
+require 'logger'
 require 'rails/all'
 require 'image_optim/railtie'
 
