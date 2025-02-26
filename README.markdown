@@ -1,5 +1,5 @@
 [![Gem Version](https://img.shields.io/gem/v/image_optim_rails?logo=rubygems)](https://rubygems.org/gems/image_optim_rails)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/toy/image_optim_rails/check.yml?logo=github)](https://github.com/toy/image_optim_rails/actions/workflows/check.yml)
+[![Check](https://img.shields.io/github/actions/workflow/status/toy/image_optim_rails/check.yml?label=check&logo=github)](https://github.com/toy/image_optim_rails/actions/workflows/check.yml)
 [![Rubocop](https://img.shields.io/github/actions/workflow/status/toy/image_optim_rails/rubocop.yml?label=rubocop&logo=rubocop)](https://github.com/toy/image_optim_rails/actions/workflows/rubocop.yml)
 [![Code Climate](https://img.shields.io/codeclimate/maintainability/toy/image_optim_rails?logo=codeclimate)](https://codeclimate.com/github/toy/image_optim_rails)
 [![Depfu](https://img.shields.io/depfu/toy/image_optim_rails)](https://depfu.com/github/toy/image_optim_rails)
