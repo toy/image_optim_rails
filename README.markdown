@@ -43,6 +43,20 @@ Caching is enabled by default in directory `tmp/cache/image_optim`.
 
 Check all available options in [options section of image_optim](https://github.com/toy/image_optim#options).
 
+## Testing
+
+Testing against multiple rails versions is done using `appraisal`:
+
+```shell
+bundle exec appraisal rspec
+```
+
+To test using containers, a script can be used that builds images based on ghcr.io/toy/image_optim.test and runs appraisal inside of them:
+
+```shell
+script/container-appraisal rspec
+```
+
 ## ChangeLog
 
 In separate file [CHANGELOG.markdown](CHANGELOG.markdown).

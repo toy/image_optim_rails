@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+export RUBY_VERSIONS=$(
+  ruby \
+    -r yaml \
+    -e 'puts YAML.load_file(".github/workflows/check.yml").dig(*%w[jobs check strategy matrix ruby]).join(" ")'
+)
+
+docker buildx bake
+
+for ruby_version in $RUBY_VERSIONS; do
+  docker run \
+    -it \
+    --rm \
+    --volume ./.git:/gem/.git \
+    --volume ./lib:/gem/lib \
+    --volume ./spec:/gem/spec \
+    "image_optim_rails.test:${ruby_version}" \
+    bundle exec appraisal "$@"
+done

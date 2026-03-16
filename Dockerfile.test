@@ -1,0 +1,8 @@
+ARG RUBY_VERSION=latest
+FROM ghcr.io/toy/image_optim.test:${RUBY_VERSION}
+
+COPY Gemfile *.gemspec ./
+RUN bundle install
+
+COPY Appraisals ./
+RUN bundle exec appraisal
