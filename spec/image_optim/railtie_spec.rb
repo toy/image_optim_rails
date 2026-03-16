@@ -3,6 +3,7 @@
 require 'spec_helper'
 require 'logger'
 require 'rails/all'
+require 'sprockets/railtie'
 require 'image_optim/railtie'
 
 describe 'ImageOptim::Railtie' do
