@@ -38,18 +38,42 @@ if RUBY_VERSION < '2.4'
 end
 
 if RUBY_VERSION >= '1.9' && RUBY_VERSION < '2.5'
-  appgen 'railties' => '~> 4.0', 'sprockets-rails' => '~> 2.0'
-  appgen 'railties' => '~> 4.0', 'sprockets' => '~> 3.0'
+  appgen 'railties' => '~> 4.2', 'sprockets-rails' => '~> 2.0'
+  appgen 'railties' => '~> 4.2', 'sprockets' => '~> 3.0'
 end
 
 if RUBY_VERSION >= '2.3' && RUBY_VERSION < '2.7'
-  appgen 'railties' => '~> 5.0', 'sprockets-rails' => '~> 2.0'
-  appgen 'railties' => '~> 5.0', 'sprockets' => '~> 3.0'
-  appgen 'railties' => '~> 5.0', 'sprockets' => '>= 4.0' if RUBY_VERSION >= '2.5'
+  appgen 'railties' => '~> 5.2', 'sprockets-rails' => '~> 2.0'
+  appgen 'railties' => '~> 5.2', 'sprockets' => '~> 3.0'
+end
+
+if RUBY_VERSION >= '2.5' && RUBY_VERSION < '2.7'
+  appgen 'railties' => '~> 5.2', 'sprockets' => '>= 4.0'
 end
 
 if RUBY_VERSION >= '2.5'
-  appgen 'railties' => '~> 6.0', 'sprockets-rails' => '~> 2.0'
-  appgen 'railties' => '~> 6.0', 'sprockets' => '~> 3.0'
-  appgen 'railties' => '~> 6.0', 'sprockets' => '>= 4.0'
+  appgen 'railties' => '~> 6.1', 'sprockets-rails' => '~> 2.0'
+  appgen 'railties' => '~> 6.1', 'sprockets' => '~> 3.0'
+  appgen 'railties' => '~> 6.1', 'sprockets' => '>= 4.0'
+end
+
+if RUBY_VERSION >= '2.7'
+  appgen 'railties' => '~> 7.0.0', 'sprockets' => '~> 3.0'
+  appgen 'railties' => '~> 7.0.0', 'sprockets' => '>= 4.0'
+
+  appgen 'railties' => '~> 7.1.0', 'sprockets' => '~> 3.0'
+  appgen 'railties' => '~> 7.1.0', 'sprockets' => '>= 4.0'
+end
+
+if RUBY_VERSION >= '3.1'
+  appgen 'railties' => '~> 7.2.0', 'sprockets' => '~> 3.0'
+  appgen 'railties' => '~> 7.2.0', 'sprockets' => '>= 4.0'
+end
+
+if RUBY_VERSION >= '3.2'
+  appgen 'railties' => '~> 8.0.0', 'sprockets' => '~> 3.0'
+  appgen 'railties' => '~> 8.0.0', 'sprockets' => '>= 4.0'
+
+  appgen 'railties' => '~> 8.1.0', 'sprockets' => '~> 3.0'
+  appgen 'railties' => '~> 8.1.0', 'sprockets' => '>= 4.0'
 end

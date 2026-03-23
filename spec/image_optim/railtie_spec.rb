@@ -3,6 +3,7 @@
 require 'spec_helper'
 require 'logger'
 require 'rails/all'
+require 'sprockets/railtie'
 require 'image_optim/railtie'
 
 describe 'ImageOptim::Railtie' do
@@ -42,6 +43,11 @@ describe 'ImageOptim::Railtie' do
 
   before do
     allow(Rails).to receive(:root).and_return(Pathname('spec/dummy').expand_path)
+
+    if defined?(ActiveSupport::Dependencies)
+      allow(ActiveSupport::Dependencies).to receive(:autoload_paths).and_return([])
+      allow(ActiveSupport::Dependencies).to receive(:autoload_once_paths).and_return([])
+    end
   end
 
   after do
