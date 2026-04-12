@@ -28,8 +28,9 @@ jobs:
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: "${{ matrix.ruby }}"
-        bundler-cache: true
     - run: sudo npm install -g svgo
+    - run: gem install image_optim_pack
+    - run: bundle install --jobs=3 --retry=3
     - run: RUBYOPT=-rset bundle exec appraisal install --jobs=3 --retry=3
     - run: bundle exec image_optim --info
     - run: bundle exec appraisal rspec
