@@ -1,8 +1,14 @@
 version: 2
 updates:
-  - package-ecosystem: github-actions
-    directory: /
-    schedule:
-      interval: daily
-    cooldown:
-      default-days: 7
+- package-ecosystem: github-actions
+  directory: /
+  schedule:
+    interval: cron
+    cronjob: "30 4 * * 0"
+  cooldown:
+    default-days: 7
+  groups:
+    non-major:
+      applies-to: version-updates
+      patterns: ["*"]
+      update-types: [patch, minor]
